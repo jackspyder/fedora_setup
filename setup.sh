@@ -20,7 +20,7 @@ update_system() {
 install_packages() {
     echo -e "# Installing packages..." >> ${LOG}
     dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-    dnf -y install git wget unzip net-tools httpd-tools patch mlocate maven htop iftop curl tree bind-utils dos2unix bash-completion git gcc-c++ make dnf-plugins-core nodejs vlc qbittorrent icedtea-web java-openjdk mediawriter quassel chrome-gnome-shell exa composer vim
+    dnf -y install git wget unzip net-tools httpd-tools patch mlocate maven htop iftop curl tree bind-utils dos2unix bash-completion git gcc-c++ make dnf-plugins-core nodejs vlc qbittorrent icedtea-web java-openjdk mediawriter quassel chrome-gnome-shell exa composer vim ripgrep
     rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
     dnf -y config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
     dnf -y install sublime-text
@@ -71,8 +71,8 @@ alias c='clear'
 alias h='history'
 alias j='journalctl -fx'
 alias l='exa -aghlF --group-directories-first --git '
-alias n='netstat -vatulpn | grep'
-alias p='ps -A | grep'
+alias n='netstat -vatulpn | rg'
+alias p='ps -A | rg'
 alias g='gvim'
 # Configure bash history 
 export HISTSIZE='1000000'
