@@ -1,1 +1,3 @@
-One click full setup for personal fresh fedora install.
+# Fedora Setup Script
+
+One click dotfile configuration script for my personal fresh fedora install.
