@@ -99,3 +99,11 @@ configure_vim(){
     git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
     sh ~/.vim_runtime/install_awesome_vimrc.sh
 }
+
+
+update_system
+install_packages
+create_profile
+history_sync
+configure_git
+configure_vim
